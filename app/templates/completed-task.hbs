@@ -1,0 +1,33 @@
+<section id="tasks-table">
+    <div class="container-fluid">
+        <div class="d-flex flex-row-reverse bd-highlight">
+            <div class="p-2 bd-highlight">
+                <a href="#" class="btn btn-secondary" id="btn-secondary">.</a>
+            </div>
+        </div>
+        <table class="p-2 table" id="#myTable">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Task</th>
+                    <th>Completed by</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody id="TableBody">
+                {{#each tasks as |task|}}
+                <tr>
+                    <th scope="row"><i class="material-icons">cancel</i></th>
+                    <td class="hand"> {{task.name}} </td>
+                    <td>{{date-format task.date}}</td>
+                    <td>
+                        <i class="material-icons" {{action "deleteTask" i}}>delete_outline</i>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</section>
+
